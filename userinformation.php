@@ -39,7 +39,7 @@
             $utype=$result->fetch_assoc()['usertype'];
             if ($utype=='p'){
                 //TODO
-                $checker = $database->query("select * from patient where pemail='$email' and ppassword='$password'");
+                $checker = $database->query("select * from student where pemail='$email' and ppassword='$password'");
                 if ($checker->num_rows==1){
 
 
@@ -51,7 +51,7 @@
 
                 }else{
                     $error='<label for="promter" class="form-label" style="color:rgb(255, 62, 62);text-align:center;">Wrong credentials: Invalid email or password</label>';
-                    include("index.php");
+                    include("index.html");
                     
 
                 }
@@ -75,7 +75,7 @@
 
             }elseif($utype=='d'){
                 //TODO
-                $checker = $database->query("select * from doctor where docemail='$email' and docpassword='$password'");
+                $checker = $database->query("select * from facultydata where docemail='$email' and docpassword='$password'");
                 if ($checker->num_rows==1){
 
 
